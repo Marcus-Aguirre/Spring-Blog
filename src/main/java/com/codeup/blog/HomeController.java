@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class HomeController {
 
 
-    @GetMapping("/home3")
+    @GetMapping("/home")
     public String welcome(){
         return "home";
     }

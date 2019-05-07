@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Individual Post</title>
+</head>
+<body>
+
+<h2>Viewing an individual Post: <span th:text="${postId}"></span></h2>
+
+<h4 th:text="${post.getTitle()}"></h4>
+<p th:text="${post.getBody()}"></p>
+
+</body>
+</html>
