@@ -1,9 +1,11 @@
 package com.codeup.blog.controllers;
 
 import com.codeup.blog.EmailService;
+import com.codeup.blog.models.User;
 import com.codeup.blog.repositories.UserRepository;
 import com.codeup.blog.models.Post;
 import com.codeup.blog.repositories.PostRepository;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -50,7 +52,10 @@ public class PostController {
     @PostMapping("/posts/create")
     public String createPost(@ModelAttribute Post post){
 
-        post.setUser(userDao.findOne(1L));
+       User sessionUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+       User UserDB = userDao.findOne(sessionUser.getId());
+       post.setUser(UserDB);
+
         postDao.save(post);
         emailSvc.prepareAndSend(post, "New Post Created", "A new post has been created and is ready to be viewed");
 

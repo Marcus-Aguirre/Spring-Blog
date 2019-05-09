@@ -5,7 +5,7 @@
     <title>Individual Post</title>
 </head>
 <body>
-
+<nav th:replace="/fragments/partials :: navbar"></nav>
 <h2>Viewing an individual Post: <span th:text="${postId}"></span></h2>
 
 <h4 th:text="${post.title}"></h4>

@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Title</title>
+    <span th:include="/fragments/partials :: links"></span>
+
 </head>
 <body>
+<nav th:replace="/fragments/partials :: navbar"></nav>
 <h2>List of all posts!</h2>
 
 <ul>

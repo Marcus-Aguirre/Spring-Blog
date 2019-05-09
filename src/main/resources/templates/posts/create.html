@@ -5,6 +5,7 @@
     <title>Post Creation</title>
 </head>
 <body>
+<nav th:replace="/fragments/partials :: navbar"></nav>
 <h2>Create A New Post!</h2>
 
 <form th:method="post" th:action="@{/posts/create}" th:object="${post}">

@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-
+<nav th:replace="/fragments/partials :: navbar"></nav>
 <h2>delete post</h2>
 
 <form method="post" th:action="@{'/posts/' + ${post.id} + '/delete'}">
