@@ -8,8 +8,9 @@
 
 <h2>Viewing an individual Post: <span th:text="${postId}"></span></h2>
 
-<h4 th:text="${post.getTitle()}"></h4>
-<p th:text="${post.getBody()}"></p>
+<h4 th:text="${post.title}"></h4>
+<p th:text="${post.body}"></p>
+<p th:text="${post.id}"></p>
 
 </body>
 </html>

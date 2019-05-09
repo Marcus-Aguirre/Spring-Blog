@@ -8,15 +8,15 @@
 <h2>List of all posts!</h2>
 
 <ul>
-    <li th:each="item : ${post}">
+    <li th:each="post : ${posts}">
 
-        <!--it makes it clickable go to the URL on click -->
-        <a th:href="@{'/posts/' + ${item.id}}"><h3 th:text="${item.title}"></h3></a>
-        <p th:text="${item.body}"></p>
+        <a th:href="@{'/posts/' + ${post.id}}"><h3 th:text="${post.title}"></h3></a>
+        <p th:text="${post.body}"></p>
+        <p th:text="${post.user.getEmail()}"></p>
 
-        <!--it makes it clickable go to the URL on click and it adds the id number to the URL-->
-        <button><a th:href="'/posts/' + ${item.id} + '/edit'">edit</a></button>
-        <button><a th:href="'/posts/' + ${item.id} + '/delete'">delete</a></button>
+
+        <button><a th:href="'/posts/' + ${post.id} + '/edit'">edit</a></button>
+        <button><a th:href="'/posts/' + ${post.id} + '/delete'">delete</a></button>
     </li>
 </ul>
 <hr/>

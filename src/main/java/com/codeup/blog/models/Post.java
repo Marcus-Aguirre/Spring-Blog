@@ -1,4 +1,4 @@
-package com.codeup.blog;
+package com.codeup.blog.models;
 
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 @Entity @Table(name = "posts")
 public class Post {
-    //creating table
+
     @Id @GeneratedValue
     private Long id;
 
@@ -17,7 +17,10 @@ public class Post {
     @Column(nullable = false)
     private String body;
 
-//geters and seters
+    @OneToOne
+    private User user;
+
+
 
     public Long getId() {
         return id;
@@ -41,6 +44,14 @@ public class Post {
 
     public void setBody(String body) {
         this.body = body;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user){
+        this.user = user;
     }
 }
 
